@@ -7,7 +7,16 @@ let isWinner, turn, board
 
 
 /*------------------------ Cached Element References ------------------------*/
-
+const message = document.getElementById("message")
+const topLeft = document.getElementById("sq0")
+const topMid = document.getElementById("sq1")
+const topRight = document.getElementById("sq2")
+const midLeft = document.getElementById("sq3")
+const center = document.getElementById("sq4")
+const midRight = document.getElementById("sq5")
+const bottomLeft = document.getElementById("sq6")
+const bottomMid = document.getElementById("sq7")
+const bottomRight = document.getElementById("sq8")
 
 
 /*----------------------------- Event Listeners -----------------------------*/
