@@ -3,7 +3,9 @@
 
 
 /*---------------------------- Variables (state) ----------------------------*/
-let isWinner, turn, board
+let isWinner
+let turn
+let board = [null, null, null, null, null, null, null, null, null]
 
 
 /*------------------------ Cached Element References ------------------------*/
@@ -24,7 +26,13 @@ const bottomRight = document.getElementById("sq8")
 
 
 /*-------------------------------- Functions --------------------------------*/
+init()
 
+function init() {
+  message.textContent = "Player X, make your move!"
+  board = []
+  isWinner = false
+}
 
 // 1) Define the required variables used to track the state of the game
 
