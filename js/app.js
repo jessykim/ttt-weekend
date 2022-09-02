@@ -16,8 +16,8 @@ let board, turn, winner
 
 
 /*------------------------ Cached Element References ------------------------*/
-const squareEls = document.querySelectorAll(".sqrs")
 const messageEl = document.querySelector("#message")
+const squareEls = document.querySelectorAll(".sqrs")
 
 // console.log(squareEls)
 // console.log(messageEl)
@@ -41,19 +41,18 @@ function init() {
 }
 
 function render() {
-  board.forEach((element, index) => {
-    const square = squareEls[index]
+  board.forEach((square, index) => {
+    const chosenSqr = squareEls[index]
     
-    if (element === 1) {
-      square.textContent = 'X'
-    } else if (element === -1) {
-      square.textContent = 'O'
+    if (square === 1) {
+      chosenSqr.textContent = 'X'
+    } else if (square === -1) {
+      chosenSqr.textContent = 'O'
     } else {
     }
   })
+  renderMessage()
 }
-
-renderMessage()
 
 function renderMessage() {
   // if winner value is null, say whose turn it is next
@@ -68,8 +67,11 @@ function renderMessage() {
 
 // add function called handleClick and have evt as the parameter
 function handleClick(evt) {
-  messageEl.textContent = 'works!'
-  console.log('works');
+  // obtain index of square that was clicked by finding index from an id assigned to the square element
+  // assign it as sqIdx
+  const sqIdx = parseInt(evt.target.id.replace('sq', ''))
+  // outcome should be the index number of square element clicked on
+
 } 
 
 // Step 1 - Define the required variables used to track the state of the game
