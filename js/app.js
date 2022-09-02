@@ -32,7 +32,7 @@ for (let i = 0; i < squareEls.length; i++) {
 init()
 
 function init() {
-  board = [null, null, null, null, null, null, null, null, null]
+  board = [-1, null, null, null, -1, null, null, null, -1]
   turn = 1
   winner = null
   render()
@@ -85,16 +85,20 @@ function getWinner() {
   winningCombos.forEach(function(arr) { 
     // for each array, use map interator to create new array with board and index number
     let boardArr = []
-    
     arr.map((indexNum) => {
       boardArr.push(board[indexNum])
     })
+    console.log(boardArr);
+
+    // total up the board positions using the 3 indexes in current combo iterated
+    const sumOfArr = Math.abs('boardArr.reduce((prev, num) => prev + num, 0)');
+    console.log(sumOfArr)
+
+    // convert total to an absolute value (if negative, convert value to positive!)
     
-    // const sumOfArr = arr.reduce((prev, num) => prev + num, 0);
-    // console.log(sumOfArr)
+    
+
   })
-  // total up the board positions using the 3 indexes in current combo
-  // convert total to an absolute value (if negative, convert value to positive!)
   // if total is 3, we have a winner
   // set winner variable to the board's value at index specified by the first index of the winning combinations array by using return
 }
