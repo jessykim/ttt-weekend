@@ -28,23 +28,31 @@ function init() {
 }
 
 function render() {
-  // loop through board array
-  // access corresponding square in squareEls array
   board.forEach((element, index) => {
     const square = squareEls[index]
-    console.log(square);
 
-    // style square, dependent on the value contained in current cell being iterated
-    // if the element being iterated over is 1: add X, if -1: add O, if null: empty
     if (element === 1) {
       square.textContent = 'X'
     } else if (element === -1) {
       square.textContent = 'O'
     } else {
     }
-  });
-  
+  })
 }
+
+renderMessage()
+
+function renderMessage() {
+  // if winner value is null, say whose turn it is next
+  // if winner value is 'T', say it's a cat's game
+  // if winner value is 1 or -1, say there's a winner
+  // use template literal inside of a ternary
+  winner === null ? messageEl.textContent = `Player ${turn.value}, your move!`
+  : winner === 'T' ? messageEl.textContent = `Ooo, it's a cat's game!`
+  : messageEl.textContent = `Congratulations Player ${winner.value}, you are the winner!`
+
+}
+
 
 // Step 1 - Define the required variables used to track the state of the game
 
