@@ -34,9 +34,9 @@ for (let i = 0; i < squareEls.length; i++) {
 init()
 
 function init() {
-  board = [null, null, null, null, null, null, null, null, null]
+  board = [1, null, null, null, -1, null, null, 1, null]
   turn = 1
-  winner = null
+  winner = 1
   render()
 }
 
@@ -70,7 +70,13 @@ function handleClick(evt) {
   // obtain index of square that was clicked by finding index from an id assigned to the square element
   // assign it as sqIdx
   const sqIdx = parseInt(evt.target.id.replace('sq', ''))
-  // outcome should be the index number of square element clicked on
+  console.log(sqIdx)
+  // if board has a value at the sqIdx, immediately return (square is taken) and if winner is not null
+  if (board[sqIdx] !== null) {
+    // console.log('taken')
+  } else if (winner !== null) {
+    // console.log('there is a winner')
+  }
 
 } 
 
