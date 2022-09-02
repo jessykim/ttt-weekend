@@ -1,14 +1,14 @@
 /*-------------------------------- Constants --------------------------------*/
-const winningCombos = [
-  [board[0], board[1], board[2]], 
-  [board[3], board[4], board[5]], 
-  [board[6], board[7], board[8]], 
-  [board[0], board[3], board[6]], 
-  [board[1], board[4], board[7]], 
-  [board[2], board[5], board[8]], 
-  [board[0], board[4], board[8]], 
-  [board[2], board[4], board[6]]
-]
+// const winningCombos = [
+//   [board[0], board[1], board[2]], 
+//   [board[3], board[4], board[5]], 
+//   [board[6], board[7], board[8]], 
+//   [board[0], board[3], board[6]], 
+//   [board[1], board[4], board[7]], 
+//   [board[2], board[5], board[8]], 
+//   [board[0], board[4], board[8]], 
+//   [board[2], board[4], board[6]]
+// ]
 
 
 /*---------------------------- Variables (state) ----------------------------*/
@@ -22,8 +22,12 @@ const messageEl = document.querySelector("#message")
 // console.log(squareEls)
 // console.log(messageEl)
 
-/*----------------------------- Event Listeners -----------------------------*/
 
+/*----------------------------- Event Listeners -----------------------------*/
+// attach event listener to game board (for each exisiting squareEls)
+for (let i = 0; i < squareEls.length; i++) {
+  squareEls[i].addEventListener('click', handleClick)
+}
 
 
 /*-------------------------------- Functions --------------------------------*/
@@ -39,7 +43,7 @@ function init() {
 function render() {
   board.forEach((element, index) => {
     const square = squareEls[index]
-
+    
     if (element === 1) {
       square.textContent = 'X'
     } else if (element === -1) {
@@ -59,9 +63,14 @@ function renderMessage() {
   winner === null ? messageEl.textContent = `Player ${turn.value}, your move!`
   : winner === 'T' ? messageEl.textContent = `Ooo, it's a cat's game!`
   : messageEl.textContent = `Congratulations Player ${winner.value}, you are the winner!`
-
+  
 }
 
+// add function called handleClick and have evt as the parameter
+function handleClick(evt) {
+  messageEl.textContent = 'works!'
+  console.log('works');
+} 
 
 // Step 1 - Define the required variables used to track the state of the game
 
