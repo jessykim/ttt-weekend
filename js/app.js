@@ -79,6 +79,11 @@ function handleClick(evt) {
     return
   }
   
+  if (winner === 1 || winner === -1) {
+    let winner = winner.value
+    getWinner()
+  }
+  render()
 
 } 
 
