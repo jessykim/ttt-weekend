@@ -7,7 +7,7 @@ let board, turn, winner
 
 
 /*------------------------ Cached Element References ------------------------*/
-const squareEls = document.querySelector(".sqrs")
+const squareEls = document.querySelectorAll(".sqrs")
 const messageEl = document.querySelector("#message")
 
 // console.log(squareEls)
@@ -20,11 +20,19 @@ const messageEl = document.querySelector("#message")
 /*-------------------------------- Functions --------------------------------*/
 init()
 
-function init(){
+function init() {
   board = [null, null, null, null, null, null, null, null, null]
   turn = 1
   winner = null
   render()
+}
+
+function render() {
+  board.forEach(square => {
+    // access corresponding square in squareEls array
+    // style the square, dependent on current cell chosen
+    // console.log(square)
+  });
 }
 
 // Step 1 - Define the required variables used to track the state of the game
