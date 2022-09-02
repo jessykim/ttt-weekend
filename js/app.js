@@ -18,7 +18,16 @@ const messageEl = document.querySelector("#message")
 
 
 /*-------------------------------- Functions --------------------------------*/
+init()
 
+function init(){
+  board = [null, null, null, null, null, null, null, null, null]
+  turn = 1
+  winner = null
+  function render(){
+    
+  }
+}
 
 // Step 1 - Define the required variables used to track the state of the game
 
