@@ -1,16 +1,16 @@
 /*-------------------------------- Constants --------------------------------*/
 
 
-// const winningCombos = [
-//   [board[0], board[1], board[2]], 
-//   [board[3], board[4], board[5]], 
-//   [board[6], board[7], board[8]], 
-//   [board[0], board[3], board[6]], 
-//   [board[1], board[4], board[7]], 
-//   [board[2], board[5], board[8]], 
-//   [board[0], board[4], board[8]], 
-//   [board[2], board[4], board[6]]
-// ]
+const winningCombos = [
+  [0, 1, 2], 
+  [3, 4, 5], 
+  [6, 7, 8], 
+  [0, 3, 6], 
+  [1, 4, 7], 
+  [2, 5, 8], 
+  [0, 4, 8], 
+  [2, 4, 6]
+]
 
 
 /*---------------------------- Variables (state) ----------------------------*/
@@ -21,12 +21,8 @@ let board, turn, winner
 const messageEl = document.querySelector("#message")
 const squareEls = document.querySelectorAll(".sqrs")
 
-// console.log(squareEls)
-// console.log(messageEl)
-
 
 /*----------------------------- Event Listeners -----------------------------*/
-// attach event listener to game board (for each exisiting squareEls)
 for (let i = 0; i < squareEls.length; i++) {
   squareEls[i].addEventListener('click', handleClick)
 }
@@ -53,28 +49,21 @@ function render() {
     } else {
     }
   })
+  
   renderMessage()
 }
 
+
 function renderMessage() {
-  // if winner value is null, say whose turn it is next
-  // if winner value is 'T', say it's a cat's game
-  // if winner value is 1 or -1, say there's a winner
-  // use template literal inside of a ternary
   winner === null ? messageEl.textContent = `Player ${turn.value}, your move!`
   : winner === 'T' ? messageEl.textContent = `Ooo, it's a cat's game!`
   : messageEl.textContent = `Congratulations Player ${winner.value}, you are the winner!`
-  
 }
 
-// add function called handleClick and have evt as the parameter
+
 function handleClick(evt) {
-  // obtain index of square that was clicked by finding index from an id assigned to the square element
-  // assign it as sqIdx
   let sqIdx = parseInt(evt.target.id.replace('sq', ''))
-  console.log(sqIdx)
-  console.log(board)
-  // if board has a value at the sqIdx, immediately return (square is taken) and if winner is not null
+  
   if (board[sqIdx] !== null) {
     return
   } else if (winner !== null) {
@@ -87,13 +76,31 @@ function handleClick(evt) {
     let winner = winner.value
     getWinner()
   }
-  render(board)
   
+  render(board)
 } 
 
 function getWinner() {
-
+  // loop through each array in winningCombos
+  winningCombos.forEach(function(arr) { 
+    // for each array, use map interator to create new array with board and index number
+    let boardArr = []
+    
+    arr.map((indexNum) => {
+      boardArr.push(board[indexNum])
+    })
+    
+    // const sumOfArr = arr.reduce((prev, num) => prev + num, 0);
+    // console.log(sumOfArr)
+  })
+  // total up the board positions using the 3 indexes in current combo
+  // convert total to an absolute value (if negative, convert value to positive!)
+  // if total is 3, we have a winner
+  // set winner variable to the board's value at index specified by the first index of the winning combinations array by using return
 }
+
+getWinner()
+
 
 // Step 1 - Define the required variables used to track the state of the game
 
