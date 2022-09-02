@@ -28,11 +28,22 @@ function init() {
 }
 
 function render() {
-  board.forEach(square => {
-    // access corresponding square in squareEls array
-    // style the square, dependent on current cell chosen
-    // console.log(square)
+  // loop through board array
+  // access corresponding square in squareEls array
+  board.forEach((element, index) => {
+    const square = squareEls[index]
+    console.log(square);
+
+    // style square, dependent on the value contained in current cell being iterated
+    // if the element being iterated over is 1: add X, if -1: add O, if null: empty
+    if (element === 1) {
+      square.textContent = 'X'
+    } else if (element === -1) {
+      square.textContent = 'O'
+    } else {
+    }
   });
+  
 }
 
 // Step 1 - Define the required variables used to track the state of the game
