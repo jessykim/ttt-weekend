@@ -24,9 +24,7 @@ function init(){
   board = [null, null, null, null, null, null, null, null, null]
   turn = 1
   winner = null
-  function render(){
-    
-  }
+  render()
 }
 
 // Step 1 - Define the required variables used to track the state of the game
