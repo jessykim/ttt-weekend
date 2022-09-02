@@ -1,4 +1,6 @@
 /*-------------------------------- Constants --------------------------------*/
+
+
 // const winningCombos = [
 //   [board[0], board[1], board[2]], 
 //   [board[3], board[4], board[5]], 
@@ -69,23 +71,29 @@ function renderMessage() {
 function handleClick(evt) {
   // obtain index of square that was clicked by finding index from an id assigned to the square element
   // assign it as sqIdx
-  board[parseInt(evt.target.id.replace('sq', ''))] = turn
-  turn *= -1
-  // console.log(board)
+  let sqIdx = parseInt(evt.target.id.replace('sq', ''))
+  console.log(sqIdx)
+  console.log(board)
   // if board has a value at the sqIdx, immediately return (square is taken) and if winner is not null
-  if (turn !== null) {
+  if (board[sqIdx] !== null) {
     return
   } else if (winner !== null) {
     return
   }
+  board[sqIdx] = turn
+  turn *= -1
   
   if (winner === 1 || winner === -1) {
     let winner = winner.value
     getWinner()
   }
-  render()
-
+  render(board)
+  
 } 
+
+function getWinner() {
+
+}
 
 // Step 1 - Define the required variables used to track the state of the game
 
