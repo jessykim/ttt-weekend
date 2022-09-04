@@ -18,12 +18,11 @@ let board, turn, winner
 /*------------------------ Cached Element References ------------------------*/
 const messageEl = document.querySelector("#message")
 const squareEls = document.querySelectorAll(".sqrs")
+const parentSqrEl = document.querySelector(".board")
 const resetBtnEl = document.getElementById("reset-button")
 
 /*----------------------------- Event Listeners -----------------------------*/
-for (let i = 0; i < squareEls.length; i++) {
-  squareEls[i].addEventListener('click', handleClick)
-}
+parentSqrEl.addEventListener('click', handleClick)
 
 resetBtnEl.addEventListener('click', init)
 
