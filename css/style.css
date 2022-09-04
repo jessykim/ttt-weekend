@@ -1,7 +1,7 @@
 body {
-    background-image: url("/images/Bunny_Background.png");
-    background-position: center;
-    background-size: cover;
+  background-image: url("/images/Bunny_Background\ 4.png");
+  background-position: center;
+  background-size: cover;
 	/* Use a system font, if none are available use an available sans-sarif   font */
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
 		Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -13,6 +13,9 @@ body {
   align-items: center;
 }
 
+.content {
+  background-color: white;
+}
 
 #message {
   padding: 10px;
@@ -47,4 +50,10 @@ section.board div {
 
 #reset-button {
   margin-top: 30px;
+}
+
+h1 {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  padding: 15px;
 }
