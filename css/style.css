@@ -25,6 +25,19 @@ div {
   vertical-align: middle;
 }
 
+section.board div {
+  border-top: none;
+  border-left: none;
+}
+
+#sq2, #sq5, #sq8 {
+  border-right: none;
+}
+
+#sq6, #sq7, #sq8 {
+  border-bottom: none;
+}
+
 #reset-button {
   margin-top: 15px;
 }
