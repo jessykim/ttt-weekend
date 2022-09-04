@@ -1,5 +1,7 @@
 body {
-    background-color: rgb(156, 186, 133);
+    background-image: url("/images/Bunny_Background.png");
+    background-position: center;
+    background-size: cover;
 	/* Use a system font, if none are available use an available sans-sarif   font */
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
 		Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -10,6 +12,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 
 #message {
   padding: 10px;
