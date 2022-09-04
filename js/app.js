@@ -1,6 +1,4 @@
 /*-------------------------------- Constants --------------------------------*/
-
-
 const winningCombos = [
   [0, 1, 2], 
   [3, 4, 5], 
@@ -32,7 +30,7 @@ for (let i = 0; i < squareEls.length; i++) {
 init()
 
 function init() {
-  board = [-1, null, null, null, -1, null, null, null, -1]
+  board = [null, null, null, null, null, null, null, null, null]
   turn = 1
   winner = null
   render()
@@ -49,16 +47,25 @@ function render() {
     } else {
     }
   })
-  
   renderMessage()
 }
 
 
 function renderMessage() {
-  winner === null ? messageEl.textContent = `Player ${turn.value}, your move!`
-  : winner === 'T' ? messageEl.textContent = `Ooo, it's a cat's game!`
-  : messageEl.textContent = `Congratulations Player ${winner.value}, you are the winner!`
+  // refactor
+  switch(winner) {
+    case null : 
+      messageEl.textContent = `Player ${turn}, your move!`
+      break
+    case 'T' :
+      messageEl.textContent = `Ooo, it's a cat's game!`
+      break
+    default :
+      messageEl.textContent = `Congratulations Player ${winner}, you are the winner!`
+      break
+  }
 }
+
 
 
 function handleClick(evt) {
@@ -69,41 +76,28 @@ function handleClick(evt) {
   } else if (winner !== null) {
     return
   }
+
   board[sqIdx] = turn
   turn *= -1
   
-  if (winner === 1 || winner === -1) {
-    let winner = winner.value
-    getWinner()
-  }
-  
-  render(board)
+  winner = getWinner()
+  render()
 } 
 
 function getWinner() {
-  // loop through each array in winningCombos
-  winningCombos.forEach(function(arr) { 
-    // for each array, use map interator to create new array with board and index number
-    let boardArr = []
-    arr.map((indexNum) => {
-      boardArr.push(board[indexNum])
-    })
-    console.log(boardArr);
+  comboValues = []
 
-    // total up the board positions using the 3 indexes in current combo iterated
-    const sumOfArr = Math.abs('boardArr.reduce((prev, num) => prev + num, 0)');
-    console.log(sumOfArr)
+  winningCombos.forEach(winningCombo => comboValues.push(Math.abs(board[winningCombo[0]] + board[winningCombo[1]] + board[winningCombo[2]])))
+  
 
-    // convert total to an absolute value (if negative, convert value to positive!)
-    
-    
-
-  })
-  // if total is 3, we have a winner
-  // set winner variable to the board's value at index specified by the first index of the winning combinations array by using return
+  if (comboValues.includes(3)) {
+    return turn*-1 
+  } else if (!board.some(spaces => spaces === null)) {
+    return 'T'
+  } else {
+    return null
+  }
 }
-
-getWinner()
 
 
 // Step 1 - Define the required variables used to track the state of the game
