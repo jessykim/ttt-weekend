@@ -1,5 +1,5 @@
 body {
-    background-color: gray;
+    background-color: rgb(156, 186, 133);
 	/* Use a system font, if none are available use an available sans-sarif   font */
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
 		Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -9,6 +9,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#message {
+  padding: 10px;
 }
 
 section.board {
@@ -39,5 +43,5 @@ section.board div {
 }
 
 #reset-button {
-  margin-top: 15px;
+  margin-top: 30px;
 }
