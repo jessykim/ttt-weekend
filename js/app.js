@@ -32,6 +32,9 @@ init()
 
 function init() {
   board = [null, null, null, null, null, null, null, null, null]
+  squareEls.forEach(function(square) {
+    square.textContent = ''
+  })
   turn = 1
   winner = null
   render()
