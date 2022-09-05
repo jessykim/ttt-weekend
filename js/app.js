@@ -65,13 +65,16 @@ function renderMessage() {
       }
       break
     case 'T' :
+      messageEl.className = 'animate__animated animate__wobble'
       messageEl.textContent = "😼 ooo, it's a cat's game! 😼"
       break
     default :
       if (winner === 1) {
+        messageEl.className = 'animate__animated animate__shakeY'
         messageEl.textContent = "🐰 we have a winner! 🐰 "
         confetti.start(2000)
       } else {
+        messageEl.className = 'animate__animated animate__shakeY'
         messageEl.textContent = "🐢 we have a winner! 🐢"
         confetti.start(2000)
       }
