@@ -59,13 +59,21 @@ function render() {
 function renderMessage() {
   switch(winner) {
     case null : 
-      messageEl.textContent = `Player ${turn}, your move!`
+      if (turn === 1) {
+        messageEl.textContent = "🐰 make your move 🐰"
+      } else {
+        messageEl.textContent = "🐢 make your move 🐢"
+      }
       break
     case 'T' :
-      messageEl.textContent = `Ooo, it's a cat's game!`
+      messageEl.textContent = "😼 ooo, it's a cat's game! 😼"
       break
     default :
-      messageEl.textContent = `Congratulations Player ${winner}, you are the winner!`
+    if (winner === 1) {
+      messageEl.textContent = "🐰 we have a winner! 🐰 "
+    } else {
+      messageEl.textContent = "🐢 we have a winner! 🐢"
+    }
       break
   }
 }
