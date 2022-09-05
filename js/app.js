@@ -20,6 +20,7 @@ const messageEl = document.querySelector("#message")
 const squareEls = document.querySelectorAll(".sqrs")
 const parentSqrEl = document.querySelector(".board")
 const resetBtnEl = document.getElementById("reset-button")
+const turboImg = document.getElementById("turbo")
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -38,6 +39,7 @@ function init() {
   })
   turn = 1
   winner = null
+  turboImg.setAttribute("hidden", true)
   render()
 }
 
@@ -73,10 +75,14 @@ function renderMessage() {
         messageEl.className = 'animate__animated animate__shakeY'
         messageEl.textContent = "🐰 we have a winner! 🐰 "
         confetti.start(2000)
+        turboImg.removeAttribute('hidden')
+        turboImg.className = 'animate__animated animate__heartBeat'
       } else {
         messageEl.className = 'animate__animated animate__shakeY'
         messageEl.textContent = "🐢 we have a winner! 🐢"
         confetti.start(2000)
+        turboImg.removeAttribute('hidden')
+        turboImg.className = 'animate__animated animate__heartBeat'
       }
       break
   }
