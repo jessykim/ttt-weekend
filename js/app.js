@@ -21,6 +21,7 @@ const squareEls = document.querySelectorAll(".sqrs")
 const parentSqrEl = document.querySelector(".board")
 const resetBtnEl = document.getElementById("reset-button")
 
+
 /*----------------------------- Event Listeners -----------------------------*/
 parentSqrEl.addEventListener('click', handleClick)
 
@@ -45,9 +46,9 @@ function render() {
     const chosenSqr = squareEls[index]
     
     if (square === 1) {
-      chosenSqr.textContent = 'X'
+      chosenSqr.textContent = '🐰'
     } else if (square === -1) {
-      chosenSqr.textContent = 'O'
+      chosenSqr.textContent = '🐢'
     } else {
     }
   })
@@ -56,7 +57,6 @@ function render() {
 
 
 function renderMessage() {
-  // refactor
   switch(winner) {
     case null : 
       messageEl.textContent = `Player ${turn}, your move!`
