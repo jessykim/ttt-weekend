@@ -55,7 +55,6 @@ function render() {
   renderMessage()
 }
 
-
 function renderMessage() {
   switch(winner) {
     case null : 
@@ -69,16 +68,16 @@ function renderMessage() {
       messageEl.textContent = "😼 ooo, it's a cat's game! 😼"
       break
     default :
-    if (winner === 1) {
-      messageEl.textContent = "🐰 we have a winner! 🐰 "
-    } else {
-      messageEl.textContent = "🐢 we have a winner! 🐢"
-    }
+      if (winner === 1) {
+        messageEl.textContent = "🐰 we have a winner! 🐰 "
+        confetti.start(2000)
+      } else {
+        messageEl.textContent = "🐢 we have a winner! 🐢"
+        confetti.start(2000)
+      }
       break
   }
 }
-
-
 
 function handleClick(evt) {
   let sqIdx = parseInt(evt.target.id.replace('sq', ''))
