@@ -1,4 +1,4 @@
-# 🐰 Tic-Tac-Turbo 🐢
+# Tic-Tac-Turbo
 
 ## 👇🏼 CLICK BELOW TO PLAY 👇🏼
 Link to play the game: https://tic-tac-turbo.fly.dev/
@@ -8,6 +8,8 @@ Welcome to Tic-Tac-**TURBO**!<br />
 This was the first browser game I built during my time in the Software Engineering Immersive Program at General Assembly. 
 
 The theme for Tic-Tac-Turbo was inspired by my pet rabbit, Turbo, who makes an appearance when Player 1 wins. I wanted to add a personal touch to the game, which made it even more enjoyable to build!
+
+Who will win? The 🐢 or the 🐰? Play to find out!
 
 ## Screenshots of the App 📸
 ![Game at state](./images/state.png)
